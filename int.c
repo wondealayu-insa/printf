@@ -33,23 +33,23 @@ int _int(va_list integer)
 			num = num / 10;
 		}
 		num = n;
-​
+
 		/* while loop to separate digits */
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-​
-			/* sets the next digit to be printed */
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
+	while (exp > 0)
+	{
+	digit = num / exp;
+	_putchar(digit + '0');
+
+	/* sets the next digit to be printed */
+	num = num - (digit * exp);
+	exp = exp / 10;
+	i++;
 	}
-​
+	}
+
 	/* adds the last character to the rest of the digits */
 	_putchar(last_digit + '0');
 	i++;
-​
+
 	return (i);
 }
