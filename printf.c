@@ -11,11 +11,9 @@ int (*find_function(const char *format))(va_list)
 {
 	unsigned int i = 0;
 	code_f find_f[] = {
-		{"e", _spec},
 		{"c", _char},
 		{"s", _string},
 		{"i", _int},
-		{"d", _dec},
 		{"r", _rev},
 		{"b", _bin},
 		{"u", _unsig},

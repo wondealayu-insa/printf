@@ -17,7 +17,6 @@ int _printf(const char *format, ...);
 int _char(va_list ch);
 int _string(va_list str);
 int _int(va_list integer);
-int _dec(va_list dec);
 int _rev(va_list rev_str);
 int _bin(va_list bin);
 int _unsig(va_list u_integer);
