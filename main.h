@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int _address(va_list val);
 int _size(const char *format, int *i);
 int _spec(va_list ex);
 int hex(unsigned long int num);
