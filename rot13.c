@@ -11,12 +11,13 @@ int _rot13(va_list plaintext)
 	char *str;
 	char normal[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char shifted[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	
 	str = va_arg(plaintext, char *);
 	if (str == NULL)
 		str = "(nothing_to_encrypt)";
-	for (;str[i] != '\0'; i++)
+	for (; str[i] != '\0'; i++)
 	{
-		for (;normal[j] != '\0'; j++)
+		for (; normal[j] != '\0'; j++)
 		{
 			if (str[i] == normal[j])
 			{

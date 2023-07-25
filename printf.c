@@ -2,15 +2,15 @@
 #include <unistd.h>
 #include "main.h"
 /**
-  * find_function - function that finds formats for _printf
+  * format_select - function that finds formats for _printf
   * calls the corresponding function.
-  * @format: format (char, string, int, decimal)
+  * @format: format ie. string, hex, oct, decimal)
   * Return: NULL or function associated ;
   */
-int (*find_function(const char *format))(va_list)
+int (*format_select(const char *format))(va_list)
 {
 	unsigned int i = 0;
-	code_f find_f[] = {
+	f_select _f[] = {
 		{"c", _char},
 		{"s", _string},
 		{"i", _int},
@@ -24,10 +24,10 @@ int (*find_function(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	while (find_f[i].sc)
+	while (_f[i].indicator)
 	{
-		if (find_f[i].sc[0] == (*format))
-			return (find_f[i].f);
+		if (_f[i].indicator[0] == (*format))
+			return (_f[i].f);
 		i++;
 	}
 	return (NULL);
@@ -39,39 +39,41 @@ int (*find_function(const char *format))(va_list)
   */
 int _printf(const char *format, ...)
 {
-	va_list ap;
+	va_list out;
 	int (*f)(va_list);
-	unsigned int i = 0, cprint = 0;
+	unsigned int i = 0; 
+	unsigned int count = 0;
 
-	if (format == NULL)
+	if (!format)
 		return (-1);
-	va_start(ap, format);
+	va_start(out, format);
 	while (format[i])
 	{
 		while (format[i] != '%' && format[i])
 		{
 			_putchar(format[i]);
-			cprint++;
+			count++;
 			i++;
 		}
 		if (format[i] == '\0')
-			return (cprint);
-		f = find_function(&format[i + 1]);
+			return (count);
+		f = format_select(&format[i + 1]);
 		if (f != NULL)
 		{
-			cprint += f(ap);
+			count += f(out);
 			i += 2;
 			continue;
 		}
 		if (!format[i + 1])
 			return (-1);
 		_putchar(format[i]);
-		cprint++;
+		count++;
+		/* percentage handler */
 		if (format[i + 1] == '%')
 			i += 2;
 		else
 			i++;
 	}
-	va_end(ap);
-	return (cprint);
+	va_end(out);
+	return (count);
 }
