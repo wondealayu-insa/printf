@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _x - function to print numbers in hexadecimal(letters in upper case)
+ * _x - function to print numbers in hexadecimal(letters in lower case)
  * @big_x: list of integers
  * @Return: hexadecimal length
  */
