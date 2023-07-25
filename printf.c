@@ -41,9 +41,8 @@ int _printf(const char *format, ...)
 {
 	va_list out;
 	int (*f)(va_list);
-	unsigned int i = 0; 
+	unsigned int i = 0;
 	unsigned int count = 0;
-
 	if (!format)
 		return (-1);
 	va_start(out, format);

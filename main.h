@@ -25,15 +25,13 @@ int _x(va_list small_hex);
 int _X(va_list big_x);
 int _rot13(va_list plaintext);
 /**
-  * struct selector - Struct to handle functions
-  *
-  * @format: The format 
-  * @f: The function associated
-  */
+ * struct selector - Struct to handle functions
+ * @format: The format
+ * * @f: The function associated
+ * */
 typedef struct func_select
 {
 	char *indicator;
 	int (*f)(va_list);
 } f_select;
-
-#endif 
+#endif

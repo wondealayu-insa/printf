@@ -11,7 +11,6 @@ int _rot13(va_list plaintext)
 	char *str;
 	char normal[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char shifted[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	
 	str = va_arg(plaintext, char *);
 	if (str == NULL)
 		str = "(nothing_to_encrypt)";
