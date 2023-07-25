@@ -15,7 +15,7 @@ int _string(va_list str)
 	string = va_arg(str, char *);
 	if (string == NULL)
 		string = "(nill)";
-	while (string[i] != 0)
+	while (string[i] != '\0')
 	{
 		_putchar(string[i]);
 		i++;
