@@ -7,10 +7,10 @@
  * Return: number of characters printed
  */
 
-int c;
 
 int _char(va_list ch)
 {
-	c = va_arg(ch,int);
+	int c;
+	c = va_arg(ch, int);
 	return (_putchar(c));
 }

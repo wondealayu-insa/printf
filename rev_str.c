@@ -12,10 +12,9 @@ int _rev(va_list rev_str)
 {
 	char *string;
 	int i = 0;
-        int count = 0;
+	int count = 0;
 	int str_len;
 	int r;
-
 	string = va_arg(rev_str, char *);
 	if (string == NULL)
 		string = "empty";
@@ -23,11 +22,9 @@ int _rev(va_list rev_str)
 	{
 		i++;
 	}
-	
 	str_len = i;
 	r = str_len - 1;
-		
-	for (;r >= 0; r--)
+	for (; r >= 0; r--)
 	{
 		_putchar(string[r]);
 		count++;
