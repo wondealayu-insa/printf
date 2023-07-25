@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _x - function to print numbers in hexadecimal(letters in upper case)
+ * _x - function to print numbers in hexadecimal(letters in lower case)
  * @big_x: list of integers
  * @Return: hexadecimal length
  */
@@ -49,7 +49,8 @@ int _x(va_list small_x)
         while (!(index < 0))
 	{
 		if (rev_hex[i] >= 10)
-			rev_hex[i] = rev_hex[i] + 39;
+		/*conversion of number to lower case(adds +39 to access lower case letters)*/
+		rev_hex[i] = rev_hex[i] + 39;
 		_putchar(rev_hex[index] + '0');
 		index--;
 	}
