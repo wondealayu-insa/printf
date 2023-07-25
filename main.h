@@ -11,7 +11,7 @@ int _spec(va_list ex);
 int hex(unsigned long int num);
 int HEX(unsigned int num);
 int _putchar(char c);
-int _len(char *s);
+int _len(char *string);
 int _lens(const char *s);
 int _printf(const char *format, ...);
 int _char(va_list ch);
@@ -30,10 +30,10 @@ int _rot13(va_list plaintext);
   * @format: The format 
   * @f: The function associated
   */
-typedef struct code_format
+typedef struct func_select
 {
-	char *sc;
+	char *indicator;
 	int (*f)(va_list);
-} code_f;
+} f_select;
 
 #endif 
