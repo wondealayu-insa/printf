@@ -49,7 +49,7 @@ int _x(va_list small_x)
         while (!(index < 0))
 	{
 		if (rev_hex[i] >= 10)
-			rev_hex[i] = rev_hex[i] + 39;
+		/*	rev_hex[i] = rev_hex[i] + 39;*/
 		_putchar(rev_hex[index] + '0');
 		index--;
 	}
